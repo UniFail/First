@@ -64,9 +64,7 @@ public class Main {
             printSeparators();
         }
         //Task 2
-        int yearOfRelease = 2022;
-        byte typeOS = 1;
-        checkOS(yearOfRelease,typeOS);
+        checkOS(2022, (byte) 1);
         printSeparators();
 
         //Task 3

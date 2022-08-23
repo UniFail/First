@@ -1,0 +1,33 @@
+package com.examplestore.controller;
+
+import com.examplestore.model.Item;
+import com.examplestore.service.StoreServiceImpl;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(path = "/store/order")
+public class StoreController {
+
+    private final StoreServiceImpl storeService;
+
+    public StoreController(StoreServiceImpl storeService) {
+        this.storeService = storeService;
+    }
+
+    @GetMapping(path = "/add")
+    public List<Item> add(@RequestParam("id") List<Integer> ids) {
+        return storeService.add(ids);
+    }
+
+    @GetMapping(path = "/get")
+    public List<Item> get() {
+        return storeService.get();
+    }
+
+
+}
